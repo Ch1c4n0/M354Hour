@@ -1,4 +1,4 @@
-# Como Desabilitar um usuário do Microsoft 365 por horário
+# Como Desabilitar um Usuário do Microsoft 365 por Horário
 
 ## Pré-requisito 
 - ***Instalar o Powershell EXO 3 no computador que vai rodar o script***
