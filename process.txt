@@ -1,0 +1,56 @@
+$secret = (Get-AzKeyVaultSecret -vaultName "kvm365" -name "teacher") | select *
+$Get_My_Scret = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue) 
+$Display_My_Secret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($Get_My_Scret) 
+$Display_My_Secret
+--------------------------------------------------------
+
+
+$Cert_Name = "M365_Cert"
+New-SelfSignedCertificate -DnsName $Cert_Name -CertStoreLocation Cert:\currentuser\My
+$MyCert = Get-ChildItem -Path "cert:\CurrentUser\My" | Where-Object {$_.Subject -match $Cert_Name}
+$Cert_TB = $MyCert.Thumbprint
+Export-Certificate -Cert "Cert:\CurrentUser\My\$Cert_TB" -FilePath C:\$Cert_Name.cer
+
+
+Get-ChildItem -Path 'cert:\CurrentUser\My' | Select Thumbprint,FriendlyName,NotAfter,Subject
+
+
+$cert = Get-ChildItem -Path Cert:\currentuser\My\BF0B139307F89D1A879F33ECB4CDC00FD2FA57FE
+Export-Certificate -Cert $cert -FilePath C:\m365\M365_Cert.cer
+--------------------------------------------------------------
+
+$TenantID = "16c0e46b-1597-4d97-9d1a-d8286850a8a8"
+$App_ID = "dc82da36-5c65-4ad6-ba64-bdb41de1f836"
+$ThumbPrint = "BF0B139307F89D1A879F33ECB4CDC00FD2FA57FE"
+Connect-AzAccount -tenantid $TenantID -ApplicationId $App_ID -CertificateThumbprint $ThumbPrint
+
+
+----------------------------------------------------------------
+
+$TenantID = "_____"
+$App_ID = "____"
+$ThumbPrint = "____"
+Connect-AzAccount -tenantid $TenantID -ApplicationId $App_ID -CertificateThumbprint $ThumbPrint
+
+$secret = (Get-AzKeyVaultSecret -vaultName "kvm365" -name "teacher") | select *
+$Get_My_Scret = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue) 
+$Display_My_Secret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($Get_My_Scret) 
+
+
+$User = "________.onmicrosoft.com"
+$PWord = ConvertTo-SecureString "$Display_My_Secret" -AsPlainText -Force
+$Cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
+
+Connect-MsolService -Credential $Cred
+
+------------------------------
+
+Import-Csv c:\m365\name.csv |  ForEach {Set-MsolUser -UserPrincipalName $_.name -BlockCredential $true}
+
+-------------------------------
+
+Get-MsolUser -UserPrincipalName "_____.onmicrosoft.com" | FL
+
+$timestamp = Get-Date -UFormat "%m%d%Y"
+
+Import-Csv c:\m365\name.csv |  ForEach {Get-MsolUser -UserPrincipalName $_.name | select Name,UserPrincipalName, BlockCredential} | Out-File -FilePath c:\m365\output$timestamp.txt
