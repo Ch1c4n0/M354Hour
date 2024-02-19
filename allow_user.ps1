@@ -5,7 +5,7 @@ $App_ID = "____"
 $ThumbPrint = "____"
 Connect-AzAccount -tenantid $TenantID -ApplicationId $App_ID -CertificateThumbprint $ThumbPrint
 
-$secret = (Get-AzKeyVaultSecret -vaultName "kvm365" -name "teacher") | select *
+$secret = (Get-AzKeyVaultSecret -vaultName "___" -name "___") | select *
 $Get_My_Scret = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue) 
 $Display_My_Secret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($Get_My_Scret) 
 
