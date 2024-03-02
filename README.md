@@ -2,6 +2,9 @@
 
 ## Pré-requisito 
 
+- ***Azure Active Directory (MSOnline)***
+    -[Azure Active Directory (MSOnline)](https://learn.microsoft.com/en-us/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0)
+
 - ***Instalar o Azure Powershell***
     - [Azure Powershell](https://learn.microsoft.com/en-us/powershell/azure/install-azps-windows?view=azps-11.3.0&tabs=powershell&pivots=windows-psgallery)
 
