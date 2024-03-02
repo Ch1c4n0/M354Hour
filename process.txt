@@ -19,9 +19,9 @@ $cert = Get-ChildItem -Path Cert:\currentuser\My\BF0B139307F89D1A879F33ECB4CDC00
 Export-Certificate -Cert $cert -FilePath C:\m365\M365_Cert.cer
 --------------------------------------------------------------
 
-$TenantID = "16c0e46b-1597-4d97-9d1a-d8286850a8a8"
-$App_ID = "dc82da36-5c65-4ad6-ba64-bdb41de1f836"
-$ThumbPrint = "BF0B139307F89D1A879F33ECB4CDC00FD2FA57FE"
+$TenantID = "______"
+$App_ID = "________"
+$ThumbPrint = "___________"
 Connect-AzAccount -tenantid $TenantID -ApplicationId $App_ID -CertificateThumbprint $ThumbPrint
 
 
