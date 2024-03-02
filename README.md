@@ -92,7 +92,7 @@
      
       `$Get_My_Scret = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue)`
      
-      `$Display_My_Secret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($Get_My_Scret)`
+      `$Display_My_Secret`
      
 
 
