@@ -3,7 +3,7 @@
 ## Pré-requisito 
 - ***Instalar o Powershell EXO 3 no computador que vai rodar o script***
    - [ExchangeOnlineManagement 3.4.0](https://www.powershellgallery.com/packages/ExchangeOnlineManagement/3.4.0)
-
+   - [Azure CLI on Windows](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
 ## Comandos para teste do ***Key Vaults***
 
 
