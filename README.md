@@ -52,11 +52,11 @@
   
       `Export-Certificate -Cert "Cert:\CurrentUser\My\$Cert_TB" -FilePath C:\$Cert_Name.cer`
 
-   - Testar Certificado
+   - Listar Certificado
      
      `Get-ChildItem -Path 'cert:\CurrentUser\My' | Select Thumbprint,FriendlyName,NotAfter,Subject`
 
-   - Importar Certificado
+   - Exportar Certificado
 
       `$cert = Get-ChildItem -Path Cert:\currentuser\My\Number_certificado`
      
