@@ -13,11 +13,15 @@
 - Teste Key Vaults
   
    - Teste 1
+   - 
+     `Connect-AzAccount`
      
      `(Get-AzKeyVaultSecret -vaultName "kvm365" -name "teacher") | select *`
      
    - Teste 2
- 
+   - 
+     `Connect-AzAccount`
+     
       `$secret = (Get-AzKeyVaultSecret -vaultName "kvm365" -name "teacher") | select *`
         
       `$Get_My_Scret = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue)` 
