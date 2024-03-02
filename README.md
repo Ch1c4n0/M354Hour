@@ -20,7 +20,7 @@
    - 
      `Connect-AzAccount`
      
-     `(Get-AzKeyVaultSecret -vaultName "kvm365" -name "teacher") | select *`
+     `(Get-AzKeyVaultSecret -vaultName "name_key_vault" -name "name_key") | select *`
      
    - Teste 2
    - 
