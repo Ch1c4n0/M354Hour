@@ -2,8 +2,12 @@
 
 ## Pré-requisito 
 
+- ***Instalar o Azure Powershell***
+    - [Azure Powershell](https://learn.microsoft.com/en-us/powershell/azure/install-azps-windows?view=azps-11.3.0&tabs=powershell&pivots=windows-psgallery)
+
 - ***Instalar o Azure CLI***
     - [Azure CLI on Windows](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
+      
 - ***Instalar o Powershell EXO 3 no computador que vai rodar o script***
    - [ExchangeOnlineManagement 3.4.0](https://www.powershellgallery.com/packages/ExchangeOnlineManagement/3.4.0)
 
